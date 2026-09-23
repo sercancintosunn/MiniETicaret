@@ -1,12 +1,71 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\sercan\\Desktop\\MiniETicaret\\ETicaretAPI\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\sercan\\Desktop\\MiniETicaret\\ETicaretAPI\\Infastructure\\ETicaretAPI.Persistence\\Migrations\\20260923201345_mig1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Infastructure\\ETicaretAPI.Persistence\\Migrations\\20260923201345_mig1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA89828E-3C5E-6E1A-0E3E-8289FFE82995}|Infastructure\\ETicaretAPI.Persistence\\ETicaretAPI.Persistence.csproj|c:\\users\\sercan\\desktop\\minieticaret\\eticaretapi\\infastructure\\eticaretapi.persistence\\configuration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA89828E-3C5E-6E1A-0E3E-8289FFE82995}|Infastructure\\ETicaretAPI.Persistence\\ETicaretAPI.Persistence.csproj|solutionrelative:infastructure\\eticaretapi.persistence\\configuration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C98A9CB-CA93-F875-41B8-A4FFF5351156}|Presentation\\ETicaretAPI.API\\ETicaretAPI.API.csproj|c:\\users\\sercan\\desktop\\minieticaret\\eticaretapi\\presentation\\eticaretapi.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{7C98A9CB-CA93-F875-41B8-A4FFF5351156}|Presentation\\ETicaretAPI.API\\ETicaretAPI.API.csproj|solutionrelative:presentation\\eticaretapi.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "20260923201345_mig1.cs",
+              "DocumentMoniker": "C:\\Users\\sercan\\Desktop\\MiniETicaret\\ETicaretAPI\\Infastructure\\ETicaretAPI.Persistence\\Migrations\\20260923201345_mig1.cs",
+              "RelativeDocumentMoniker": "Infastructure\\ETicaretAPI.Persistence\\Migrations\\20260923201345_mig1.cs",
+              "ToolTip": "C:\\Users\\sercan\\Desktop\\MiniETicaret\\ETicaretAPI\\Infastructure\\ETicaretAPI.Persistence\\Migrations\\20260923201345_mig1.cs",
+              "RelativeToolTip": "Infastructure\\ETicaretAPI.Persistence\\Migrations\\20260923201345_mig1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-23T20:13:45.748Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Configuration.cs",
+              "DocumentMoniker": "C:\\Users\\sercan\\Desktop\\MiniETicaret\\ETicaretAPI\\Infastructure\\ETicaretAPI.Persistence\\Configuration.cs",
+              "RelativeDocumentMoniker": "Infastructure\\ETicaretAPI.Persistence\\Configuration.cs",
+              "ToolTip": "C:\\Users\\sercan\\Desktop\\MiniETicaret\\ETicaretAPI\\Infastructure\\ETicaretAPI.Persistence\\Configuration.cs",
+              "RelativeToolTip": "Infastructure\\ETicaretAPI.Persistence\\Configuration.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAIwBQAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-23T20:00:19.459Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\sercan\\Desktop\\MiniETicaret\\ETicaretAPI\\Presentation\\ETicaretAPI.API\\appsettings.json",
+              "RelativeDocumentMoniker": "Presentation\\ETicaretAPI.API\\appsettings.json",
+              "ToolTip": "C:\\Users\\sercan\\Desktop\\MiniETicaret\\ETicaretAPI\\Presentation\\ETicaretAPI.API\\appsettings.json",
+              "RelativeToolTip": "Presentation\\ETicaretAPI.API\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-09-23T19:19:07.132Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
