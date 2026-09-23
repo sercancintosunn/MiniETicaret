@@ -1,1 +1,13 @@
-<Solution />
+<Solution>
+  <Folder Name="/Core/">
+    <Project Path="Core/ETicaret.API.Domain/ETicaret.API.Domain.csproj" />
+    <Project Path="Core/ETicaretAPI.Application/ETicaretAPI.Application.csproj" />
+  </Folder>
+  <Folder Name="/Infastructure/">
+    <Project Path="Infastructure/ETicaretAPI.Infastructure/ETicaretAPI.Infastructure.csproj" />
+    <Project Path="Infastructure/ETicaretAPI.Persistence/ETicaretAPI.Persistence.csproj" />
+  </Folder>
+  <Folder Name="/Presentation/">
+    <Project Path="Presentation/ETicaretAPI.API/ETicaretAPI.API.csproj" />
+  </Folder>
+</Solution>
