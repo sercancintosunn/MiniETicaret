@@ -1,0 +1,26 @@
+.heroSection {
+    display: grid;
+    grid-column: 2;
+    grid-template-columns: 1.15fr .85fr;
+    min-height: 290px;
+    gap: 24px;
+    padding: 44px;
+    background: url('/mini-eticaret-hero-background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-top: 20px;
+    border: 1px solid #25170f;
+    border-radius: 28px;
+    color: #25170f;
+
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr minmax(0, 1200px) 1fr;
+    /* Sol boşluk, maksimum genişlikli orta alan, sağ boşluk */
+    padding: 0 20px;
+    /* Ekran çok küçülürse kenarlardan taşmayı önler */
+    margin-top: 20px;
+}

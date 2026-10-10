@@ -29,12 +29,12 @@
 
 .navigationSearchGroupItem {
     width: 500px;
-    color: #ff6b00;
+
 }
 
 .navigationLink {
     text-decoration: none;
-    color: black
+    color: #25170f
 }
 
 .navigationLink:hover {

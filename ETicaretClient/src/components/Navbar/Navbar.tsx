@@ -35,10 +35,10 @@ function Navbar() {
                     variant="standard"
                     sx={{
 
-                        "& .MuiInputLabel-root": { color: "#c94e00" },
+                        "& .MuiInputLabel-root": { color: "#25170f" },
                         "& .MuiInputLabel-root.Mui-focused": { color: "#ff6b00" }, // Tıklandığındaki renk
 
-                        // Input içindeki yazı rengi
+
                         "& .MuiInput-input": { color: "#f1dfd0" },
 
                         // Alt çizgi renkleri
