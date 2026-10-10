@@ -1,0 +1,46 @@
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.title {
+    font-size: 20px;
+    color: #ff6b00;
+}
+
+.navigationAction {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.navigationActionItem {
+    margin: 15px;
+    font-size: 15px;
+}
+
+.navigationSearchGroup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navigationSearchGroupItem {
+    width: 500px;
+    color: #ff6b00;
+}
+
+.navigationLink {
+    text-decoration: none;
+    color: black
+}
+
+.navigationLink:hover {
+    color: #ff6b00;
+}
+
+.icons:hover {
+    color: #ff6b00;
+}

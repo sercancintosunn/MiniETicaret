@@ -1,0 +1,12 @@
+<svg width="300" height="76" viewBox="0 0 300 76" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">MiniEticaret logo</title>
+  <desc id="desc">Turuncu ve beyaz renklerde özgün MiniEticaret kelime logosu</desc>
+  <rect width="300" height="76" rx="22" fill="#FF6B00"/>
+  <circle cx="40" cy="38" r="20" fill="#FFFFFF" fill-opacity="0.18"/>
+  <path d="M30 32H34L36.5 46H50L54 36H36" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="39" cy="52" r="2.5" fill="#FFFFFF"/>
+  <circle cx="48" cy="52" r="2.5" fill="#FFFFFF"/>
+  <text x="72" y="46" fill="#FFFFFF" font-family="Arial Rounded MT Bold, Arial, sans-serif" font-size="25" font-weight="700" letter-spacing="-1.1">mini</text>
+  <text x="132" y="46" fill="#3A210F" font-family="Arial Rounded MT Bold, Arial, sans-serif" font-size="25" font-weight="700" letter-spacing="-1.1">eticaret</text>
+  <circle cx="271" cy="20" r="4" fill="#3A210F" fill-opacity="0.65"/>
+</svg>
