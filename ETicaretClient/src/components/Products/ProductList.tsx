@@ -1,6 +1,7 @@
 import React from 'react'
 import ProductCard from './ProductCard'
 import styles from "./productList.module.css"
+import { products } from '../../data/product'
 
 function ProductGrid() {
     return (
@@ -9,28 +10,9 @@ function ProductGrid() {
                 <h3>Tüm Ürünler</h3>
             </div>
             <div className={styles.productGrid}>
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-
-
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-
-                <ProductCard />
+                {products.map((product) => (
+                    <ProductCard key={product.id} product={product} />
+                ))}
             </div>
 
 
