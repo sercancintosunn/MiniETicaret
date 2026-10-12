@@ -36,14 +36,14 @@ function Navbar() {
                     sx={{
 
                         "& .MuiInputLabel-root": { color: "#25170f" },
-                        "& .MuiInputLabel-root.Mui-focused": { color: "#ff6b00" }, // Tıklandığındaki renk
+                        "& .MuiInputLabel-root.Mui-focused": { color: "#ff6b00" },
 
 
                         "& .MuiInput-input": { color: "#f1dfd0" },
 
                         // Alt çizgi renkleri
                         "& .MuiInput-underline:before": { borderBottomColor: "#f1dfd0," }, // Normal çizgi
-                        "& .MuiInput-underline:hover:not(.Mui-disabled):before": { borderBottomColor: "#0088ff" }, // Üzerine gelince
+                        "& .MuiInput-underline:hover:not(.Mui-disabled):before": { borderBottomColor: "#ff6b00" }, // Üzerine gelince
                         "& .MuiInput-underline:after": { borderBottomColor: "#ff6b00" }, // Tıklandığındaki odak çizgisi
                     }}
                 />

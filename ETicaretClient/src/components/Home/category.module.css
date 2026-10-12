@@ -1,0 +1,26 @@
+.category {
+    margin: 20px
+}
+
+.categoryItems {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.categoryItem {
+    min-width: 200px;
+    padding: 10px;
+    font-size: 10px;
+    font-weight: 800;
+    border-radius: 13px;
+    cursor: pointer;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    transition: box-shadow 0.4s ease-in-out;
+}
+
+.categoryItem:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+
+
+}
