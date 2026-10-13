@@ -2,8 +2,14 @@ import React from 'react'
 import styles from "./heroSection.module.css"
 import Button from '@mui/material/Button';
 import { FaArrowRight } from "react-icons/fa6";
+import { useNavigate } from 'react-router-dom';
+
+
 
 function heroSection() {
+
+
+    const navigate = useNavigate();
     return (
         <div className={styles.container}>
 
@@ -13,7 +19,7 @@ function heroSection() {
                     <p>MiniETicaret'e hoş geldin</p>
                     <h1>Aradığın ürün, bir tık uzağında.</h1>
                     <p>Günlük ihtiyaçtan teknolojiye kadar seçtiğin ürünleri kolayca keşfet.</p>
-                    <Button sx={{
+                    <Button onClick={() => navigate("/products")} sx={{
                         backgroundColor: "#fff",
                         color: "#c94e00",
                         fontWeight: "800"

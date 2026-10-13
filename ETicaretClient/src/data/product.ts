@@ -6,6 +6,8 @@ export const categories: Category[] = [
     { id: 2, name: "Giyim" },
     { id: 3, name: "Ev & Yaşam" },
     { id: 4, name: "Spor" },
+    { id: 5, name: "Aksesuar" },
+    { id: 6, name: "Çanta" }
 ];
 
 

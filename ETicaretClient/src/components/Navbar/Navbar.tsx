@@ -53,7 +53,7 @@ function Navbar() {
             <div className={styles.navigationAction}>
                 <Link className={`${styles.navigationActionItem} ${styles.navigationLink}`} to="/">Home</Link>
                 <Link className={`${styles.navigationActionItem} ${styles.navigationLink}`} to="/products">Products</Link>
-                <Link className={`${styles.navigationActionItem} ${styles.navigationLink}`} to="/categories">Categories</Link>
+
                 <Link className={`${styles.navigationActionItem} ${styles.navigationLink}`} to="/basket">
                     <IconButton >
                         <Badge
