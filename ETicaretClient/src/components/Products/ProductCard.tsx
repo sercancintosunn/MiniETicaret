@@ -6,7 +6,7 @@ import type { ProductCardType } from '../../types/type'
 
 function ProductCard({ product }: ProductCardType) {
 
-    const { id, name, price, image } = product
+    const { id, name, price, imageUrl } = product
     const navigate = useNavigate()
 
 
@@ -14,7 +14,7 @@ function ProductCard({ product }: ProductCardType) {
     return (
         <div onClick={() => navigate(`/products/${id}`)} className={styles.card}>
             <div className={styles.cardImage}>
-                <img style={{ width: "300px", height: "110px" }} src={image} alt="" />
+                <img className={styles.cardImageItem} src={imageUrl} alt="" />
             </div>
             <div className={styles.cardBody}>
                 <h4 className={styles.title}>{name}</h4>
