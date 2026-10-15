@@ -1,17 +1,19 @@
 import React, { useState } from 'react'
-import { products } from '../../data/product'
 import { useParams } from 'react-router-dom'
-import { categories } from '../../data/product'
 import { IoIosArrowForward } from "react-icons/io";
 import styles from './ProductDetailPage.module.css'
+import { useSelector } from 'react-redux';
+import type { RootState } from '../../redux/store';
 
 function ProductDetailPage() {
 
-    const { id } = useParams()
+    const selectedProduct = useSelector((state: RootState) => state.products.selectedProduct)
 
-    const product = products.find((p) => p.id === Number(id));
+    if (!selectedProduct) {
+        return <div>Herhangi bir ürün seçilemedi.</div>
+    }
 
-    const category = categories.find((cat) => cat.id === product?.categoryId)
+    const { image, description, title, price, rating, category } = selectedProduct
 
     const [count, setCount] = useState(1)
 
@@ -32,17 +34,17 @@ function ProductDetailPage() {
     return (
         <div>
             <div className={styles.crumb}>
-                Home <IoIosArrowForward /> Products <IoIosArrowForward /> <b>{category?.name}</b>
+                Home <IoIosArrowForward /> Products <IoIosArrowForward /> <b>{category}</b>
             </div>
             <div className={styles.grid}>
                 <div className={styles.imageSection}>
-                    <img src={product?.imageUrl} alt="" />
+                    <img src={image} alt="" />
                 </div>
                 <div className={styles.detail}>
-                    <h1>{product?.name}</h1>
-                    <h2>{product?.price}₺</h2>
-                    <p>{product?.description}</p>
-                    <div>Stok:{product?.stock}</div>
+                    <h1>{title}</h1>
+                    <h2>{price}₺</h2>
+                    <p>{description}</p>
+                    <div>Stok:{rating.count}</div>
                     <div className={styles.buyRow}>
                         <div className={styles.quantity}>
                             <button className={styles.btn} onClick={handleDecrease}>-</button>

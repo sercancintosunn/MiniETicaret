@@ -1,7 +1,5 @@
 import React from 'react'
 import styles from "./category.module.css"
-import { categories } from '../../data/product'
-import type { Category } from '../../types/type'
 
 
 const colorPalette = [
@@ -22,16 +20,13 @@ function CategorySection() {
                 <h2>Kategoriler</h2>
                 <div className={styles.categoryItems}>
 
-                    {
-                        categories.map((cat, index) => {
-                            const theme = colorPalette[index % colorPalette.length];
-                            return (
-                                <div key={cat.id} className={styles.categoryItem} style={{ backgroundColor: theme.bg }} >
-                                    <h5 style={{ color: theme.text }}>{cat.name}</h5>
-                                </div>
-                            )
-                        })
-                    }
+
+                    <div className={styles.categoryItem} >
+                        <h5>at.name</h5>
+                    </div>
+
+
+
 
 
                 </div>

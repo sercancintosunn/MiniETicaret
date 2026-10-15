@@ -1,19 +1,19 @@
 export interface Product {
     id: number,
-    name: string,
+    title: string,
     price: number,
-    imageUrl: string,
+    image: string,
     description: string,
-    categoryId: number,
-    stock: number
+    category: string,
+    rating: Rating
 }
 
-export interface ProductCardType {
+export interface Rating {
+    rate: number,
+    count: number
+}
+
+
+export interface ProductCardProps {
     product: Product
-}
-
-
-export interface Category {
-    id: number,
-    name: string
 }

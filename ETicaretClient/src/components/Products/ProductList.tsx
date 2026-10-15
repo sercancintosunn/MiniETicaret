@@ -1,18 +1,58 @@
-import React from 'react'
-import ProductCard from './ProductCard'
+import React, { useEffect } from 'react'
 import styles from "./productList.module.css"
-import { products } from '../../data/product'
+import { useDispatch, useSelector } from 'react-redux'
+import type { AppDispatch } from '../../redux/store'
+import { fetchProducts } from '../../redux/slices/productSlice'
+import type { RootState } from '../../redux/store'
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
+import ProductCard from './ProductCard'
 
-function ProductGrid() {
+
+function ProductList() {
+
+
+    const dispatch = useDispatch<AppDispatch>()
+
+    const { products, loading, error } = useSelector((state: RootState) => state.products);
+
+    useEffect(() => {
+        dispatch(fetchProducts() as any)
+    }, [dispatch])
+
+    if (loading) {
+        return (
+            <Backdrop
+                sx={(theme) => ({ color: '#fff', zIndex: theme.zIndex.drawer + 1 })}
+                open={loading}
+
+            >
+                <CircularProgress color="inherit" />
+            </Backdrop>
+        )
+    }
+
+    if (error) {
+        return <div style={{ color: 'red' }}>Hata: {error}</div>;
+    }
+
+
+
+
     return (
         <div >
             <div className={styles.productTitle}>
                 <h3>Tüm Ürünler</h3>
             </div>
             <div className={styles.productGrid}>
-                {products.map((product) => (
-                    <ProductCard key={product.id} product={product} />
-                ))}
+
+                {
+                    products && products.map((product) => {
+                        return <ProductCard key={product.id} product={product} />
+                    })
+
+                }
+
             </div>
 
 
@@ -21,4 +61,4 @@ function ProductGrid() {
     )
 }
 
-export default ProductGrid
+export default ProductList
