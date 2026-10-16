@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useState } from 'react'
 import { IoIosArrowForward } from "react-icons/io";
 import styles from './ProductDetailPage.module.css'
 import { useSelector } from 'react-redux';

@@ -1,4 +1,3 @@
-import React from 'react'
 import styles from "./heroSection.module.css"
 import Button from '@mui/material/Button';
 import { FaArrowRight } from "react-icons/fa6";

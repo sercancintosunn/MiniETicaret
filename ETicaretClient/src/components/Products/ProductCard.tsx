@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react'
 import styles from "./productCard.module.css"
 import { useNavigate } from 'react-router-dom'
 import type { ProductCardProps } from '../../types/type'
