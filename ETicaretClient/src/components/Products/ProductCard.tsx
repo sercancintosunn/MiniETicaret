@@ -4,6 +4,7 @@ import type { ProductCardProps } from '../../types/type'
 import { useDispatch } from 'react-redux'
 import type { AppDispatch } from '../../redux/store'
 import { setSelectedProduct } from '../../redux/slices/productSlice'
+import axios from "axios"
 
 
 
@@ -15,10 +16,22 @@ function ProductCard({ product }: ProductCardProps) {
 
     const navigate = useNavigate()
 
+    const getAll = async () => {
+        const response = await axios.get("https://localhost:7090/api/products")
+
+        console.log(response.data)
+    }
+
+
+
+
     const handleCardClick = () => {
         dispatch(setSelectedProduct(product))
         navigate(`/products/${id}`)
+        getAll()
     }
+
+
 
 
     return (
