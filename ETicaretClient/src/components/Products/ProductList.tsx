@@ -14,17 +14,17 @@ function ProductList() {
 
     const dispatch = useDispatch<AppDispatch>()
 
-    const { products, loading, error } = useSelector((state: RootState) => state.products);
+    const { products, listLoading, error } = useSelector((state: RootState) => state.products);
 
     useEffect(() => {
         dispatch(fetchProducts() as any)
     }, [dispatch])
 
-    if (loading) {
+    if (listLoading) {
         return (
             <Backdrop
                 sx={(theme) => ({ color: '#fff', zIndex: theme.zIndex.drawer + 1 })}
-                open={loading}
+                open={listLoading}
 
             >
                 <CircularProgress color="inherit" />

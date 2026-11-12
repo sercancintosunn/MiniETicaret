@@ -1,19 +1,13 @@
-export interface Product {
-    id: number,
-    title: string,
-    price: number,
-    image: string,
-    description: string,
-    category: string,
-    rating: Rating
+export interface ProductDto{
+    id:string,
+    name:string,
+    stock:number,
+    price:number,
 }
 
-export interface Rating {
-    rate: number,
-    count: number
+export interface ProductDtoProps{
+    product: ProductDto
 }
 
-
-export interface ProductCardProps {
-    product: Product
-}
+export type CreateProductDto = Omit<ProductDto,"id">
+export type UpdateProductDto = CreateProductDto

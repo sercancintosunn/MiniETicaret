@@ -1,64 +1,77 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import type { PayloadAction } from '@reduxjs/toolkit'
-import type { Product } from '../../types/type'
-import axios from 'axios';
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import type { ProductDto } from "../../types/type";
+import { productService } from "../../services/productService";
 
-
-interface ProductSlice {
-    products: Product[],
-    loading: boolean,
-    selectedProduct: Product | null,
+interface ProductState{
+    products : ProductDto[],
+    selectedProduct : ProductDto | null,
+    listLoading: boolean,
+    detailLoading: boolean,
     error: string | null
 }
 
-
-const initialState: ProductSlice = {
+const initialState : ProductState = {
     products: [],
     selectedProduct: null,
-    loading: false,
-    error: null
-}
+    listLoading: false,
+    detailLoading: false,
+    error: null,
+};
 
 
-const BASE_URL = "https://fakestoreapi.com/"
-
-export const fetchProducts = createAsyncThunk<Product[], void, { rejectValue: string }>('products/fetchProducts', async (_, thunkAPI) => {
-    try {
-        const response = await axios.get<Product[]>(`${BASE_URL}/products`);
-
-        return response.data
-    } catch (error: any) {
-        return thunkAPI.rejectWithValue(error.response?.data?.message || error.message || "Bir hata oluştu");
+export const fetchProducts = createAsyncThunk<ProductDto[],void,{rejectValue:string}>("products/fetchAll",async(_,{rejectWithValue}) =>{
+    try{
+        return await productService.getAll();
+    }
+    catch(error){
+        return rejectWithValue(
+            error instanceof Error ? error.message : "Ürünler alınamadı"
+        );
     }
 })
 
+export const fetchProductById = createAsyncThunk<ProductDto,string,{rejectValue:string}>("products/fetchById",async(id,{rejectWithValue}) => {
+    try{
+        return await productService.getById(id);
+    }
+    catch(error){
+        return rejectWithValue(
+            error instanceof Error ? error.message : "Ürün bulunamadı"
+        );
+    }
+});
 
-export const productSlice = createSlice({
-    name: "products",
+const productSlice = createSlice({
+    name:"products",
     initialState,
-    reducers: {
-        setSelectedProduct: (state, action: PayloadAction<Product | null>) => {
-            state.selectedProduct = action.payload;
-        },
-    },
-    extraReducers: (builder) => {
+    reducers:{},
+    extraReducers:(builder)=>{
         builder
-            .addCase(fetchProducts.pending, (state) => {
-                state.loading = true;
-                state.error = null;
-            })
-            .addCase(fetchProducts.fulfilled, (state, action) => {
-                state.loading = false;
-                state.products = action.payload
-            })
-            .addCase(fetchProducts.rejected, (state, action) => {
-                state.loading = false;
-                state.error = action.payload || "Bilinmeyen bir hata oluştu"
-            });
+        .addCase(fetchProducts.pending, (state) => {
+            state.listLoading = true;
+            state.error = null;
+        })
+        .addCase(fetchProducts.fulfilled, (state,action) => {
+            state.listLoading = false;
+            state.products = action.payload;
+        })
+        .addCase(fetchProducts.rejected, (state,action) => {
+            state.listLoading = false;
+            state.error = action.payload ?? action.error.message ?? "Bir hata oluştu";
+        })
+        .addCase(fetchProductById.pending,(state) => {
+            state.listLoading = true;
+            state.error = null;
+        })
+        .addCase(fetchProductById.fulfilled, (state,action) => {
+            state.listLoading = false;
+            state.selectedProduct = action.payload;
+        })
+        .addCase(fetchProductById.rejected,(state,action)=>{
+            state.listLoading = false;
+            state.error = action.payload ?? action.error.message ?? "Bir hata oluştu";
+        })
     }
 })
 
-export const { setSelectedProduct } = productSlice.actions
-
-
-export default productSlice.reducer
+export default productSlice.reducer;

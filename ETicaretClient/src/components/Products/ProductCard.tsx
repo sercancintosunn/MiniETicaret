@@ -1,34 +1,25 @@
 import styles from "./productCard.module.css"
 import { useNavigate } from 'react-router-dom'
-import type { ProductCardProps } from '../../types/type'
+import type {ProductDtoProps } from '../../types/type'
 import { useDispatch } from 'react-redux'
 import type { AppDispatch } from '../../redux/store'
-import { setSelectedProduct } from '../../redux/slices/productSlice'
-import axios from "axios"
+import { fetchProductById } from "../../redux/slices/productSlice"
 
 
 
 
-function ProductCard({ product }: ProductCardProps) {
+function ProductCard({ product }: ProductDtoProps) {
 
-    const { id, title, price, image } = product
+    const { id, name, price, stock } = product
     const dispatch = useDispatch<AppDispatch>()
 
     const navigate = useNavigate()
 
-    const getAll = async () => {
-        const response = await axios.get("https://localhost:7090/api/products")
-
-        console.log(response.data)
-    }
-
-
-
+    
 
     const handleCardClick = () => {
-        dispatch(setSelectedProduct(product))
+        dispatch(fetchProductById(id))
         navigate(`/products/${id}`)
-        getAll()
     }
 
 
@@ -37,10 +28,10 @@ function ProductCard({ product }: ProductCardProps) {
     return (
         <div onClick={handleCardClick} className={styles.card}>
             <div className={styles.cardImage}>
-                <img className={styles.cardImageItem} src={image} alt="" />
+                <img className={styles.cardImageItem} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfafbKW_55jYZaduATS_7gy8dkGB6MAe1-uRaAwpiMDA&s=10" alt="" />
             </div>
             <div className={styles.cardBody}>
-                <h4 className={styles.title}>{title}</h4>
+                <h4 className={styles.title}>{name}</h4>
                 <span className={styles.price}>{price}₺ </span>
             </div>
         </div>
