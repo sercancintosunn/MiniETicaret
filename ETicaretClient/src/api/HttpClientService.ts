@@ -27,6 +27,25 @@ export class HtppClientService{
 
         return response.data
     }
+
+    async post<TResponse,TBody>(request: RequestParameter, body: TBody) : Promise<TResponse>{
+        const response = await  this.client.post<TResponse>(
+            this.buildUrl(request),
+            body,
+            {headers : request.headers}
+        );
+
+        return response.data;
+    }
+
+    async put<TResponse,TBody>(request: RequestParameter,id : string,body: TBody) : Promise<TResponse>{
+        const response = await this.client.put<TResponse>(
+            this.buildUrl(request,id),
+            body,
+            {headers:request.headers}
+        );
+        return response.data;
+    }
 }
 
 export const httpClient = new HtppClientService();
