@@ -11,6 +11,7 @@ interface ProductState{
     error: string | null,
     creating: boolean,
     updating : boolean, 
+    deleting: boolean
 }
 
 const initialState : ProductState = {
@@ -20,7 +21,8 @@ const initialState : ProductState = {
     detailLoading: false,
     error: null,
     creating: false,
-    updating : false
+    updating : false,
+    deleting:false
 };
 
 interface UpdateProductArgs{
@@ -68,6 +70,17 @@ export const updateProduct = createAsyncThunk<ProductDto,UpdateProductArgs,{reje
         return rejectWithValue(
             error instanceof Error ? error.message : "Ürün Güncellenmedi"
         );
+    }
+})
+
+export const deleteProduct = createAsyncThunk<string,string,{rejectValue:string}>("products/deleteProduct",async(id,{rejectWithValue}) =>{
+    try{
+        await productService.delete(id);
+        return id;
+    }catch(error){
+        return rejectWithValue(
+            error instanceof Error ? error.message : "Ürün silinemedi"
+        )
     }
 })
 
@@ -135,6 +148,23 @@ const productSlice = createSlice({
         .addCase(updateProduct.rejected,(state,action) => {
             state.updating = false;
             state.error = action.payload ?? "Ürün güncellenmedi"
+        })
+        .addCase(deleteProduct.pending,(state) => {
+            state.deleting = true;
+           state.error = null
+        })
+        .addCase(deleteProduct.fulfilled,(state,action) => {
+            state.deleting = false;
+            
+            state.products = state.products.filter((p) => p.id !== action.payload)
+
+            if(state.selectedProduct?.id === action.payload){
+                state.selectedProduct = null
+            }
+        })
+        .addCase(deleteProduct.rejected,(state,action) => {
+            state.deleting = false;
+            state.error = action.payload ?? "Ürün silinemedi"
         })
     }
 })

@@ -46,6 +46,15 @@ export class HtppClientService{
         );
         return response.data;
     }
+
+    async delete<TResponse = void>(request : RequestParameter,id:string) : Promise<TResponse>{
+        const response = await this.client.delete<TResponse>(
+            this.buildUrl(request,id),
+            {headers: request.headers}
+        )
+
+        return response.data;
+    }
 }
 
 export const httpClient = new HtppClientService();

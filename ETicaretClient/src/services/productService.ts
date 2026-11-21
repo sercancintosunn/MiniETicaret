@@ -12,7 +12,10 @@ export const productService = {
         httpClient.post<ProductDto,CreateProductDto>({controller:"Products"},body),
 
     put:(body:UpdateProductDto,id:string) =>
-        httpClient.put<ProductDto,UpdateProductDto>({controller:"Products"},id,body)
+        httpClient.put<ProductDto,UpdateProductDto>({controller:"Products"},id,body),
+    
+    delete:(id:string) =>
+        httpClient.delete<void>({controller:"Products"},id)
 
 }
 
